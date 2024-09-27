@@ -1,0 +1,21 @@
+@page "/contract--nou"
+
+@attribute [Authorize]
+
+<PageTitle>Contract Nou</PageTitle>
+<RadzenRow>
+    <RadzenColumn Size="12">
+        <RadzenText Text="Contract Nou" TextStyle="TextStyle.H3" TagName="TagName.H1" />
+    </RadzenColumn>
+</RadzenRow>
+<RadzenText Text="Contractor: ">
+    <RadzenDropDown TValue="dynamic"></RadzenDropDown>
+</RadzenText>
+<RadzenDropDown TValue="dynamic" Data="@beneficiaris" TextProperty="NumeCompanie"></RadzenDropDown>
+<RadzenText Text="Beneficiar:" />
+<RadzenDropDown TValue="dynamic"></RadzenDropDown>
+
+@code {
+
+    
+}

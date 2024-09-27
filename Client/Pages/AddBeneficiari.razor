@@ -1,0 +1,89 @@
+@page "/add-beneficiari"
+
+@attribute [Authorize]
+
+<PageTitle>Add Beneficiari</PageTitle>
+    <RadzenColumn SizeMD=12>
+        <RadzenAlert Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">Cannot save Beneficiari</RadzenAlert>
+        <RadzenTemplateForm TItem="VersaControl.Server.Models.versacontrol.Beneficiari" Data="@beneficiari" Visible="@(beneficiari != null && canEdit)" Submit="@FormSubmit">
+          <RadzenStack>
+            <RadzenFormField Text="Nume Companie" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@beneficiari.NumeCompanie" Name="NumeCompanie" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="NumeCompanie" Text="NumeCompanie is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Cui" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@beneficiari.Cui" Name="Cui" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="Cui" Text="Cui is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Adresa Mail Office" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@beneficiari.AdresaMailOffice" Name="AdresaMailOffice" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="AdresaMailOffice" Text="AdresaMailOffice is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Adresa" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@beneficiari.Adresa" Name="Adresa" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="Adresa" Text="Adresa is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Reprezentant" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@beneficiari.Reprezentant" Name="Reprezentant" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="Reprezentant" Text="Reprezentant is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Nr Telefon" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenNumeric style="display: block; width: 100%" @bind-Value="@beneficiari.NrTelefon" Name="NrTelefon" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="NrTelefon" Text="NrTelefon is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Email" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@beneficiari.Email" Name="Email" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="Email" Text="Email is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Rol" Variant="Variant.Filled">
+                  <ChildContent>
+                      <RadzenDropDown @bind-Value="@beneficiari.Rol" Name="Rol" Data="@Options" ClearSearchAfterSelection="true" AllowFiltering="true" AllowClear="false" AllowVirtualization="false"></RadzenDropDown>
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="Rol" Text="Rol is required" />
+                  </Helper>
+            </RadzenFormField>
+          </RadzenStack>
+          <RadzenStack style="margin-top:1rem;" Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                    <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save" Variant="Variant.Flat" />
+                    <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Variant="Variant.Flat" Click="@CancelButtonClick"  />
+          </RadzenStack>
+        </RadzenTemplateForm>
+    </RadzenColumn>
+@code {
+
+    List<object> Options = new List<object>();
+    protected override void OnInitialized()
+    {
+        Options.Add("Beneficiar");
+        Options.Add("Contractor");
+    }
+}
