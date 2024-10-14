@@ -112,7 +112,7 @@ namespace VersaControl.Server.Controllers.versacontrol
                 this.context.SaveChanges();
 
                 var itemToReturn = this.context.Beneficiaris.Where(i => i.Id == key);
-                
+                Request.QueryString = Request.QueryString.Add("$expand", "Roluri");
                 this.OnAfterBeneficiariUpdated(item);
                 return new ObjectResult(SingleResult.Create(itemToReturn));
             }
@@ -147,7 +147,7 @@ namespace VersaControl.Server.Controllers.versacontrol
                 this.context.SaveChanges();
 
                 var itemToReturn = this.context.Beneficiaris.Where(i => i.Id == key);
-                
+                Request.QueryString = Request.QueryString.Add("$expand", "Roluri");
                 this.OnAfterBeneficiariUpdated(item);
                 return new ObjectResult(SingleResult.Create(itemToReturn));
             }
@@ -183,7 +183,7 @@ namespace VersaControl.Server.Controllers.versacontrol
 
                 var itemToReturn = this.context.Beneficiaris.Where(i => i.Id == item.Id);
 
-                
+                Request.QueryString = Request.QueryString.Add("$expand", "Roluri");
 
                 this.OnAfterBeneficiariCreated(item);
 

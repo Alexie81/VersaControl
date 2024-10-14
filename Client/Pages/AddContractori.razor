@@ -18,10 +18,7 @@
             <RadzenFormField Text="Cui" Variant="Variant.Filled">
                   <ChildContent>
                     <RadzenTextBox style="display: block; width: 100%" @bind-Value="@contractori.Cui" Name="Cui" />
-                  </ChildContent>    
-                  <Helper>
-                    <RadzenRequiredValidator Component="Cui" Text="Cui is required" />
-                  </Helper>
+              </ChildContent>
             </RadzenFormField>
             <RadzenFormField Text="Adresa Mail Office" Variant="Variant.Filled">
                   <ChildContent>
@@ -63,13 +60,12 @@
                     <RadzenRequiredValidator Component="Email" Text="Email is required" />
                   </Helper>
             </RadzenFormField>
-            <RadzenFormField Text="Rol" Variant="Variant.Filled">
+            <RadzenFormField Text="Roluri" Variant="Variant.Filled">
                   <ChildContent>
-                      <RadzenDropDown @bind-Value="@contractori.Rol" Name="Rol" Data="@Options" ClearSearchAfterSelection="true" AllowFiltering="true" AllowClear="false" AllowVirtualization="false"></RadzenDropDown>
-                  </ChildContent>    
-                  <Helper>
-                    <RadzenRequiredValidator Component="Rol" Text="Rol is required" />
-                  </Helper>
+                    <RadzenDropDownDataGrid Data="@rolurisForRol" TextProperty="Nume" ValueProperty="Id" AllowClear=true
+                          style="display: block; width: 100%" @bind-Value="@contractori.Rol" Name="Rol"
+                        SelectedValue=@rolurisForRolValue Count=@rolurisForRolCount LoadData=@rolurisForRolLoadData />
+              </ChildContent>
             </RadzenFormField>
           </RadzenStack>
           <RadzenStack style="margin-top:1rem;" Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
@@ -79,12 +75,3 @@
         </RadzenTemplateForm>
     </RadzenColumn>
 
-@code {
-
-    List<object> Options = new List<object>();
-    protected override void OnInitialized()
-    {
-        Options.Add("Beneficiar");
-        Options.Add("Contractor");
-    }
-}

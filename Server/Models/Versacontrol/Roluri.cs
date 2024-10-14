@@ -18,5 +18,9 @@ namespace VersaControl.Server.Models.versacontrol
         [Column("nume")]
         [Required]
         public string Nume { get; set; }
+
+        public ICollection<Beneficiari> Beneficiaris { get; set; }
+
+        public ICollection<Contractori> Contractoris { get; set; }
     }
 }

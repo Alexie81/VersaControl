@@ -26,6 +26,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/versalogic/versacontrol/Client/Pages/AddAnexa.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQW5leGEucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/versalogic/versacontrol/Client/Pages/AddApplicationRole.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQXBwbGljYXRpb25Sb2xlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,8 +42,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQmVuZWZpY2lhcmkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/versalogic/versacontrol/Client/Pages/AddContracte.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQ29udHJhY3RlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/versalogic/versacontrol/Client/Pages/AddContractori.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQ29udHJhY3RvcmkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/versalogic/versacontrol/Client/Pages/AddMonede.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkTW9uZWRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/versalogic/versacontrol/Client/Pages/AddRoluri.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUm9sdXJpLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/versalogic/versacontrol/Client/Pages/AddTipuriContract.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkVGlwdXJpQ29udHJhY3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/versalogic/versacontrol/Client/Pages/AdminSettings.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5TZXR0aW5ncy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/versalogic/versacontrol/Client/Pages/Anexas.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5leGFzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/versalogic/versacontrol/Client/Pages/ApplicationRoles.razor]
@@ -54,12 +82,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmVuZWZpY2lhcmlzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/versalogic/versacontrol/Client/Pages/ContractNou.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udHJhY3ROb3UucmF6b3I=
+[D:/versalogic/versacontrol/Client/Pages/Contractes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udHJhY3Rlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/versalogic/versacontrol/Client/Pages/Contractoris.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udHJhY3RvcmlzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/versalogic/versacontrol/Client/Pages/Download.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG93bmxvYWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/versalogic/versacontrol/Client/Pages/EditAdminSetting.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEFkbWluU2V0dGluZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/versalogic/versacontrol/Client/Pages/EditAnexa.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEFuZXhhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/versalogic/versacontrol/Client/Pages/EditApplicationUser.razor]
@@ -70,8 +110,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEJlbmVmaWNpYXJpLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/versalogic/versacontrol/Client/Pages/EditContracte.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdENvbnRyYWN0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/versalogic/versacontrol/Client/Pages/EditContractori.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdENvbnRyYWN0b3JpLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/versalogic/versacontrol/Client/Pages/EditMonede.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdE1vbmVkZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/versalogic/versacontrol/Client/Pages/EditRoluri.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFJvbHVyaS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/versalogic/versacontrol/Client/Pages/EditTipuriContract.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFRpcHVyaUNvbnRyYWN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/versalogic/versacontrol/Client/Pages/Index.razor]
@@ -82,6 +138,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/versalogic/versacontrol/Client/Pages/Monedes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9uZWRlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/versalogic/versacontrol/Client/Pages/Profile.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -90,8 +150,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJBcHBsaWNhdGlvblVzZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/versalogic/versacontrol/Client/Pages/Roluris.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9sdXJpcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/versalogic/versacontrol/Client/Pages/SecurityCode.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VjdXJpdHlDb2RlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/versalogic/versacontrol/Client/Pages/TipuriContracts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGlwdXJpQ29udHJhY3RzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/versalogic/versacontrol/Client/Pages/Unauthorized.razor]

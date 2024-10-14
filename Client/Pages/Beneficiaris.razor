@@ -1,6 +1,7 @@
 @page "/beneficiari"
 
 @attribute [Authorize]
+
 <PageTitle>Beneficiari</PageTitle>
 <RadzenStack>
     <RadzenRow AlignItems="AlignItems.Center">
@@ -23,6 +24,8 @@
         <RadzenDataGrid @ref="grid0" ColumnWidth="200px"   AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
             Data="@beneficiaris" LoadData="@Grid0LoadData" Count="@count" TItem="VersaControl.Server.Models.versacontrol.Beneficiari" RowDoubleClick="@EditRow">
             <Columns>
+                <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Beneficiari" Property="Id" Title="Id">
+                </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Beneficiari" Property="NumeCompanie" Title="Nume Companie">
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Beneficiari" Property="Cui" Title="Cui">
@@ -37,9 +40,7 @@
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Beneficiari" Property="Email" Title="Email">
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Beneficiari" Property="Rol" Title="Rol">
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Beneficiari" Property="Id" Title="Id">
+                <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Beneficiari" Property="Roluri.Nume" Title="Roluri">
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Beneficiari" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
                     <Template Context="beneficiari">

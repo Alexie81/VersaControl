@@ -10,12 +10,16 @@ namespace VersaControl.Server.Models.versacontrol
     [Table("contractori")]
     public partial class Contractori
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id")]
+        public int Id { get; set; }
+
         [Column("Nume Companie")]
         [Required]
         public string NumeCompanie { get; set; }
 
         [Column("CUI")]
-        [Required]
         public string Cui { get; set; }
 
         [Column("Adresa Mail Office")]
@@ -36,11 +40,10 @@ namespace VersaControl.Server.Models.versacontrol
         public string Email { get; set; }
 
         [Required]
-        public string Rol { get; set; }
+        public int Rol { get; set; }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("id")]
-        public int Id { get; set; }
+        public Roluri Roluri { get; set; }
+
+        public ICollection<Contracte> Contractes { get; set; }
     }
 }

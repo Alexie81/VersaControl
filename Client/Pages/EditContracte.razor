@@ -1,0 +1,77 @@
+@page "/edit-contracte"
+@attribute [Authorize]
+
+<PageTitle>Edit Contracte</PageTitle>
+<RadzenRow>
+    <RadzenColumn SizeMD="9">
+    <RadzenLabel style="font-weight: bold" Text="Item no longer available." Visible="@(!canEdit)" />
+    </RadzenColumn>
+    <RadzenColumn SizeMD="3">
+    <RadzenButton ButtonStyle="ButtonStyle.Secondary" style="margin-bottom: 20px" Text="Close" Visible="@(!canEdit)" Click="@CancelButtonClick" />
+    </RadzenColumn>
+</RadzenRow>
+<RadzenRow>
+    <RadzenColumn SizeMD="9">
+    <RadzenLabel style="font-weight: bold" Text="Another user has made conflicting changes to one or more of the fields you have modified. Please reload." Visible="@hasChanges" />
+    </RadzenColumn>
+    <RadzenColumn SizeMD="3">
+    <RadzenButton ButtonStyle="ButtonStyle.Secondary" Icon="autorenew" style="margin-bottom: 20px" Text="Reload" Visible="@hasChanges" Click="@ReloadButtonClick" />
+    </RadzenColumn>
+</RadzenRow>
+
+    <RadzenColumn SizeMD=12>
+        <RadzenAlert Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">Cannot save Contracte</RadzenAlert>
+        <RadzenTemplateForm TItem="VersaControl.Server.Models.versacontrol.Contracte" Data="@contracte" Visible="@(contracte != null && canEdit)" Submit="@FormSubmit">
+          <RadzenStack>
+            <RadzenFormField Text="Beneficiari" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenDropDownDataGrid Data="@beneficiarisForIdBeneficiar" TextProperty="NumeCompanie" ValueProperty="Id" AllowClear=true
+                          style="display: block; width: 100%" @bind-Value="@contracte.IdBeneficiar" Name="IdBeneficiar"
+                        SelectedValue=@beneficiarisForIdBeneficiarValue Count=@beneficiarisForIdBeneficiarCount LoadData=@beneficiarisForIdBeneficiarLoadData />
+              </ChildContent>
+            </RadzenFormField>
+            <RadzenFormField Text="Contractori" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenDropDownDataGrid Data="@contractorisForIdFurnizor" TextProperty="NumeCompanie" ValueProperty="Id" AllowClear=true
+                          style="display: block; width: 100%" @bind-Value="@contracte.IdFurnizor" Name="IdFurnizor"
+                        SelectedValue=@contractorisForIdFurnizorValue Count=@contractorisForIdFurnizorCount LoadData=@contractorisForIdFurnizorLoadData />
+              </ChildContent>
+            </RadzenFormField>
+            <RadzenFormField Text="Scop Contract" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@contracte.ScopContract" Name="ScopContract" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="ScopContract" Text="ScopContract is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Suma Contract" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenNumeric style="display: block; width: 100%" @bind-Value="@contracte.SumaContract" Name="SumaContract" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="SumaContract" Text="SumaContract is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Monede" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenDropDownDataGrid Data="@monedesForIdMoneda" TextProperty="PrescurtareMoneda" ValueProperty="Id" AllowClear=true
+                          style="display: block; width: 100%" @bind-Value="@contracte.IdMoneda" Name="IdMoneda"
+                        SelectedValue=@monedesForIdMonedaValue Count=@monedesForIdMonedaCount LoadData=@monedesForIdMonedaLoadData />
+              </ChildContent>
+            </RadzenFormField>
+            <RadzenFormField Text="Tipuri Contract" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenDropDownDataGrid Data="@tipuriContractsForIdTipContract" TextProperty="Tip" ValueProperty="Id" AllowClear=true
+                          style="display: block; width: 100%" @bind-Value="@contracte.IdTipContract" Name="IdTipContract"
+                        SelectedValue=@tipuriContractsForIdTipContractValue Count=@tipuriContractsForIdTipContractCount LoadData=@tipuriContractsForIdTipContractLoadData />
+              </ChildContent>
+            </RadzenFormField>
+          </RadzenStack>
+          <RadzenStack style="margin-top:1rem;" Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                    <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save" Variant="Variant.Flat" />
+                    <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Variant="Variant.Flat" Click="@CancelButtonClick"  />
+          </RadzenStack>
+        </RadzenTemplateForm>
+    </RadzenColumn>
+

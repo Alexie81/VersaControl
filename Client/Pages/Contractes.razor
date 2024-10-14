@@ -1,0 +1,55 @@
+@page "/contracte"
+
+@attribute [Authorize]
+
+<PageTitle>Contracte</PageTitle>
+<RadzenStack>
+    <RadzenRow AlignItems="AlignItems.Center">
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenText Text="Contracte" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                <RadzenSplitButton Icon="get_app" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter">
+                    <RadzenSplitButtonItem Text="Excel" Value="xlsx" />
+                    <RadzenSplitButtonItem Text="CSV" Value="csv" />
+                </RadzenSplitButton>
+                <RadzenButton Icon="add_circle_outline" Text="Add" Click="@AddButtonClick" Variant="Variant.Flat" />
+            </RadzenStack>
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenTextBox Placeholder="Search ..." style="display: block; width: 100%" @oninput="@Search" aria-label="Search by all string columns" />
+    <RadzenRow>
+      <RadzenColumn SizeMD=12>
+        <RadzenDataGrid @ref="grid0" ColumnWidth="200px"   AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
+            Data="@contractes" LoadData="@Grid0LoadData" Count="@count" TItem="VersaControl.Server.Models.versacontrol.Contracte" RowDoubleClick="@EditRow">
+            <Columns>
+                <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Contracte" Property="Id" Title="Id">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Contracte" Property="Beneficiari.NumeCompanie" Title="Beneficiari">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Contracte" Property="Contractori.NumeCompanie" Title="Contractori">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Contracte" Property="ScopContract" Title="Scop Contract">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Contracte" Property="SumaContract" Title="Suma Contract">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Contracte" Property="Monede.PrescurtareMoneda" Title="Monede">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Contracte" Property="TipuriContract.Tip" Title="Tipuri Contract">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="VersaControl.Server.Models.versacontrol.Contracte" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+                    <Template Context="contracte">
+
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.Medium"
+                            Shade="Shade.Lighter" Variant="Variant.Flat"
+                            Click=@(args => GridDeleteButtonClick(args, contracte)) @onclick:stopPropagation="true" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+
+        </RadzenDataGrid>
+
+    </RadzenColumn>
+  </RadzenRow>
+</RadzenStack>

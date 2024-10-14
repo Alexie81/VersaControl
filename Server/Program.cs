@@ -38,9 +38,22 @@ builder.Services.AddDbContext<VersaControl.Server.Data.versacontrolContext>(opti
 builder.Services.AddControllers().AddOData(opt =>
 {
     var oDataBuilderversacontrol = new ODataConventionModelBuilder();
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Efmigrationshistory>("Efmigrationshistories");
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.AdminSetting>("AdminSettings");
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Anexa>("Anexas");
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Aspnetroleclaim>("Aspnetroleclaims");
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Aspnetrole>("Aspnetroles");
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Aspnetuserclaim>("Aspnetuserclaims");
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Aspnetuserlogin>("Aspnetuserlogins").EntityType.HasKey(entity => new { entity.LoginProvider, entity.ProviderKey });
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Aspnetuserrole>("Aspnetuserroles").EntityType.HasKey(entity => new { entity.UserId, entity.RoleId });
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Aspnetuser>("Aspnetusers");
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Aspnetusertoken>("Aspnetusertokens").EntityType.HasKey(entity => new { entity.UserId, entity.LoginProvider, entity.Name });
     oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Beneficiari>("Beneficiaris");
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Contracte>("Contractes");
     oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Contractori>("Contractoris");
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Monede>("Monedes");
     oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.Roluri>("Roluris");
+    oDataBuilderversacontrol.EntitySet<VersaControl.Server.Models.versacontrol.TipuriContract>("TipuriContracts");
     opt.AddRouteComponents("odata/versacontrol", oDataBuilderversacontrol.GetEdmModel()).Count().Filter().OrderBy().Expand().Select().SetMaxTop(null).TimeZone = TimeZoneInfo.Utc;
 });
 builder.Services.AddScoped<VersaControl.Client.versacontrolService>();

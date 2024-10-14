@@ -21,8 +21,12 @@
       "url": "images\/logo-login.png"
     },
     {
-      "hash": "sha256-u792EaCAVtblt96oQYyqOyPyByu23XtxwZjBbIVf0tw=",
+      "hash": "sha256-2CC9veJfAN0r8rHLRsTXYP8vDABStmIdAG7K6R7ysKw=",
       "url": "images\/logo.png"
+    },
+    {
+      "hash": "sha256-qIRzSlcn7HObyN4Gyx5sTDu21dpmxvroHMyGePKIycw=",
+      "url": "index.html"
     },
     {
       "hash": "sha256-tdq3cyiYn4zO9YiKvkhg0qVj5dMcgBGxkZx2pEuJ4go=",
@@ -31,6 +35,14 @@
     {
       "hash": "sha256-wC+zAyYHVTNzevCw3SFvHI4jG51pV1+b5sQ3Rj11QGI=",
       "url": "_framework\/blazor.webassembly.js"
+    },
+    {
+      "hash": "sha256-RAUPJttURXd2Dwk1W0bLMFrR2ZVqs4FEpIY3PkA0sbs=",
+      "url": "_framework\/Xceed.Document.NET.dll"
+    },
+    {
+      "hash": "sha256-v\/WjDg0BTV07ZaFxL5+I1ApusAk9iHJ6YS7yCyj4gO4=",
+      "url": "_framework\/Xceed.Words.NET.dll"
     },
     {
       "hash": "sha256-YrylHRTu62Y4DS1KJjjsfHa2yNHmK2OLLMrMojWIKNo=",
@@ -173,8 +185,20 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
+      "hash": "sha256-QV6B1p\/dQJO7qHvPN0JZr5UKKFp+s9zZSnViNcpgVN8=",
+      "url": "_framework\/Microsoft.Win32.SystemEvents.dll"
+    },
+    {
       "hash": "sha256-FHmuMg\/\/KdhGx9JCIEVh1XnvGJpPxb6xCXkuVgjTZy8=",
       "url": "_framework\/Radzen.Blazor.dll"
+    },
+    {
+      "hash": "sha256-dwtIoWQRFC7p1tlAJ7t97eQP9V3zyrjSdzHn0aaC4HM=",
+      "url": "_framework\/System.Drawing.Common.dll"
+    },
+    {
+      "hash": "sha256-1NYPxd\/Znog+W3dejVSmi57hLM8eGX\/c6SIZBh\/dDRM=",
+      "url": "_framework\/System.IO.Packaging.dll"
     },
     {
       "hash": "sha256-OXr1SqT\/FRQmnxVa6n811yUyJraU4tzQs5skNCiDmiM=",
@@ -873,15 +897,15 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-eP+z\/DGJrd7EdQ7MyrNMyC2tuhpk7SYmF45LPb27gOk=",
+      "hash": "sha256-UTHbZD08cLqXKAptOtYXWrrl3303zcjX8488lV6W5uU=",
       "url": "_framework\/VersaControl.Client.dll"
     },
     {
-      "hash": "sha256-rPGohhb+SW+zCgex3hzW0BkpxD\/oudn3Oqzc\/iaDZDI=",
+      "hash": "sha256-zyUZ6Sve4qAwYj5EIc5XKdDh7SEEBkCfUmGyh8pgJso=",
       "url": "_framework\/VersaControl.Client.pdb"
     },
     {
-      "hash": "sha256-tJhK886dMZBIFLQ+IxIv3p72BbIuCK0\/Qs1K9c2Cxew=",
+      "hash": "sha256-T\/h+da+8FQbWcWPiji7iCjngpGjs2\/9X9U2FIwU4P0k=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1029,5 +1053,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     }
   ],
-  "version": "ucH1wXCP"
+  "version": "hYFwfjXg"
 };

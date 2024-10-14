@@ -1,0 +1,58 @@
+@page "/edit-admin-setting"
+
+@attribute [Authorize]
+
+<PageTitle>Edit AdminSetting</PageTitle>
+
+    <RadzenColumn SizeMD=12>
+        <RadzenAlert Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">Cannot save AdminSetting</RadzenAlert>
+        <RadzenTemplateForm TItem="VersaControl.Server.Models.versacontrol.AdminSetting" Data="@adminSetting" Visible="@(adminSetting != null)" Submit="@FormSubmit">
+          <RadzenStack>
+            <RadzenFormField Text="Path For Saving Documents" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" Name="PathForSavingDocuments" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="PathForSavingDocuments" Text="PathForSavingDocuments is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Ftp Host Name" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@adminSetting.FtpHostName" Name="FtpHostName" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="FtpHostName" Text="FtpHostName is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Ftp User Name" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@adminSetting.FtpUserName" Name="FtpUserName" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="FtpUserName" Text="FtpUserName is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Ftp Password" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@adminSetting.FtpPassword" Name="FtpPassword" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="FtpPassword" Text="FtpPassword is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Ftp Port" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenNumeric style="display: block; width: 100%" @bind-Value="@adminSetting.FtpPort" Name="FtpPort" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="FtpPort" Text="FtpPort is required" />
+                  </Helper>
+            </RadzenFormField>
+          </RadzenStack>
+          <RadzenStack style="margin-top:1rem;" Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                    <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save" Variant="Variant.Flat" />
+                    <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Variant="Variant.Flat" Click="@CancelButtonClick"  />
+          </RadzenStack>
+        </RadzenTemplateForm>
+    </RadzenColumn>
+

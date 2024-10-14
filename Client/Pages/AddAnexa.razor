@@ -1,0 +1,47 @@
+@page "/add-anexa"
+
+@attribute [Authorize]
+
+<PageTitle>Add Anexa</PageTitle>
+    <RadzenColumn SizeMD=12>
+        <RadzenAlert Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">Cannot save Anexa</RadzenAlert>
+        <RadzenTemplateForm TItem="VersaControl.Server.Models.versacontrol.Anexa" Data="@anexa" Visible="@(anexa != null && canEdit)" Submit="@FormSubmit">
+          <RadzenStack>
+            <RadzenFormField Text="Contracte" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenDropDownDataGrid Data="@contractesForIdContract" TextProperty="Id" ValueProperty="Id" AllowClear=true
+                          style="display: block; width: 100%" @bind-Value="@anexa.IdContract" Name="IdContract"
+                        SelectedValue=@contractesForIdContractValue Count=@contractesForIdContractCount LoadData=@contractesForIdContractLoadData />
+              </ChildContent>
+            </RadzenFormField>
+            <RadzenFormField Text="Scop Anexa" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@anexa.ScopAnexa" Name="ScopAnexa" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="ScopAnexa" Text="ScopAnexa is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Suma Anexa" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@anexa.SumaAnexa" Name="SumaAnexa" />
+                  </ChildContent>    
+                  <Helper>
+                    <RadzenRequiredValidator Component="SumaAnexa" Text="SumaAnexa is required" />
+                  </Helper>
+            </RadzenFormField>
+            <RadzenFormField Text="Monede" Variant="Variant.Filled">
+                  <ChildContent>
+                    <RadzenDropDownDataGrid Data="@monedesForIdMoneda" TextProperty="PrescurtareMoneda" ValueProperty="Id" AllowClear=true
+                          style="display: block; width: 100%" @bind-Value="@anexa.IdMoneda" Name="IdMoneda"
+                        SelectedValue=@monedesForIdMonedaValue Count=@monedesForIdMonedaCount LoadData=@monedesForIdMonedaLoadData />
+              </ChildContent>
+            </RadzenFormField>
+          </RadzenStack>
+          <RadzenStack style="margin-top:1rem;" Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                    <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save" Variant="Variant.Flat" />
+                    <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Variant="Variant.Flat" Click="@CancelButtonClick"  />
+          </RadzenStack>
+        </RadzenTemplateForm>
+    </RadzenColumn>
+

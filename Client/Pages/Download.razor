@@ -1,0 +1,26 @@
+@page "/download"
+
+<h3>Download Document</h3>
+<button @onclick="CreateAndDownloadDocument">Download Document</button>
+
+@code {
+    private bool isJsInitialized = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Aici poți face orice inițializări necesare
+            isJsInitialized = true;
+        }
+    }
+
+    private async Task CreateAndDownloadDocument()
+    {
+        // Creează conținutul fișierului în C#
+        var content = "Hello, this is a test paragraph generated in C#!";
+
+        // Apel la funcția JavaScript pentru salvare fișier, trimitem conținutul și numele fișierului
+        await JSRuntime.InvokeVoidAsync("saveFileFromBlazor", content, "TestDocument.txt");
+    }
+}

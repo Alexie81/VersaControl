@@ -10,7 +10,7 @@ using Radzen.Blazor;
 
 namespace VersaControl.Client.Pages
 {
-    public partial class ContractNou
+    public partial class AdminSettings
     {
         [Inject]
         protected IJSRuntime JSRuntime { get; set; }
@@ -33,38 +33,32 @@ namespace VersaControl.Client.Pages
         [Inject]
         public versacontrolService versacontrolService { get; set; }
 
-        protected IEnumerable<VersaControl.Server.Models.versacontrol.Beneficiari> beneficiaris;
+        protected IEnumerable<VersaControl.Server.Models.versacontrol.AdminSetting> adminSettings;
 
-        protected RadzenDataGrid<VersaControl.Server.Models.versacontrol.Beneficiari> grid0;
+        protected RadzenDataGrid<VersaControl.Server.Models.versacontrol.AdminSetting> grid0;
         protected int count;
-
-        protected string search = "";
 
         [Inject]
         protected SecurityService Security { get; set; }
 
-        protected async Task Search(ChangeEventArgs args)
-        {
-            search = $"{args.Value}";
-
-            await grid0.GoToPage(0);
-
-            await grid0.Reload();
-        }
-
-        protected async Task DropDownLoadData(LoadDataArgs args)
+        protected async Task Grid0LoadData(LoadDataArgs args)
         {
             try
             {
-                var result = await versacontrolService.GetBeneficiaris(filter: $@"(contains(NumeCompanie,""{search}"")", top: args.Top, skip: args.Skip, count:args.Top != null && args.Skip != null);
-                beneficiaris = result.Value.AsODataEnumerable();
+                var result = await versacontrolService.GetAdminSettings(filter: $"{args.Filter}", orderby: $"{args.OrderBy}", top: args.Top, skip: args.Skip, count:args.Top != null && args.Skip != null);
+                adminSettings = result.Value.AsODataEnumerable();
                 count = result.Count;
             }
             catch (System.Exception ex)
             {
-                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error, Summary = $"Error", Detail = $"Unable to load Beneficiaris" });
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error, Summary = $"Error", Detail = $"Unable to load AdminSettings" });
             }
         }
+
+        protected async Task EditRow(VersaControl.Server.Models.versacontrol.AdminSetting args)
+        {
+            await DialogService.OpenAsync<EditAdminSetting>("Edit AdminSetting", new Dictionary<string, object> { {"Id", args.Id} });
+            await grid0.Reload();
+        }
     }
-    
 }

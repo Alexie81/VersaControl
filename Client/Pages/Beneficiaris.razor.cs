@@ -56,7 +56,7 @@ namespace VersaControl.Client.Pages
         {
             try
             {
-                var result = await versacontrolService.GetBeneficiaris(filter: $@"(contains(NumeCompanie,""{search}"") or contains(Cui,""{search}"") or contains(AdresaMailOffice,""{search}"") or contains(Adresa,""{search}"") or contains(Reprezentant,""{search}"") or contains(Email,""{search}"") or contains(Rol,""{search}"")) and {(string.IsNullOrEmpty(args.Filter)? "true" : args.Filter)}", orderby: $"{args.OrderBy}", top: args.Top, skip: args.Skip, count:args.Top != null && args.Skip != null);
+                var result = await versacontrolService.GetBeneficiaris(filter: $@"(contains(NumeCompanie,""{search}"") or contains(Cui,""{search}"") or contains(AdresaMailOffice,""{search}"") or contains(Adresa,""{search}"") or contains(Reprezentant,""{search}"") or contains(Email,""{search}"")) and {(string.IsNullOrEmpty(args.Filter)? "true" : args.Filter)}", expand: "Roluri", orderby: $"{args.OrderBy}", top: args.Top, skip: args.Skip, count:args.Top != null && args.Skip != null);
                 beneficiaris = result.Value.AsODataEnumerable();
                 count = result.Count;
             }
@@ -111,7 +111,7 @@ namespace VersaControl.Client.Pages
 {
     Filter = $@"{(string.IsNullOrEmpty(grid0.Query.Filter)? "true" : grid0.Query.Filter)}",
     OrderBy = $"{grid0.Query.OrderBy}",
-    Expand = "",
+    Expand = "Roluri",
     Select = string.Join(",", grid0.ColumnsCollection.Where(c => c.GetVisible() && !string.IsNullOrEmpty(c.Property)).Select(c => c.Property.Contains(".") ? c.Property + " as " + c.Property.Replace(".", "") : c.Property))
 }, "Beneficiaris");
             }
@@ -122,7 +122,7 @@ namespace VersaControl.Client.Pages
 {
     Filter = $@"{(string.IsNullOrEmpty(grid0.Query.Filter)? "true" : grid0.Query.Filter)}",
     OrderBy = $"{grid0.Query.OrderBy}",
-    Expand = "",
+    Expand = "Roluri",
     Select = string.Join(",", grid0.ColumnsCollection.Where(c => c.GetVisible() && !string.IsNullOrEmpty(c.Property)).Select(c => c.Property.Contains(".") ? c.Property + " as " + c.Property.Replace(".", "") : c.Property))
 }, "Beneficiaris");
             }

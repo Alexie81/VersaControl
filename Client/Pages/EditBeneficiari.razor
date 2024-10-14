@@ -1,5 +1,4 @@
-@page "/edit-beneficiari"
-
+@page "/edit-beneficiari"
 @attribute [Authorize]
 
 <PageTitle>Edit Beneficiari</PageTitle>
@@ -80,13 +79,12 @@
                     <RadzenRequiredValidator Component="Email" Text="Email is required" />
                   </Helper>
             </RadzenFormField>
-            <RadzenFormField Text="Rol" Variant="Variant.Filled">
+            <RadzenFormField Text="Roluri" Variant="Variant.Filled">
                   <ChildContent>
-                    <RadzenTextBox style="display: block; width: 100%" @bind-Value="@beneficiari.Rol" Name="Rol" />
-                  </ChildContent>    
-                  <Helper>
-                    <RadzenRequiredValidator Component="Rol" Text="Rol is required" />
-                  </Helper>
+                    <RadzenDropDownDataGrid Data="@rolurisForRol" TextProperty="Nume" ValueProperty="Id" AllowClear=true
+                          style="display: block; width: 100%" @bind-Value="@beneficiari.Rol" Name="Rol"
+                        SelectedValue=@rolurisForRolValue Count=@rolurisForRolCount LoadData=@rolurisForRolLoadData />
+              </ChildContent>
             </RadzenFormField>
           </RadzenStack>
           <RadzenStack style="margin-top:1rem;" Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">

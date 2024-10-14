@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
+      "Id": "D:\\versalogic\\versacontrol\\Client\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
       "Id": "D:\\versalogic\\versacontrol\\Client\\wwwroot\\manifest.json",
       "PackagePath": "staticwebassets\\manifest.json"
     },

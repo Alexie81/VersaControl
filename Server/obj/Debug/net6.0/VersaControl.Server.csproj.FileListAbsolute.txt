@@ -69,3 +69,10 @@ D:\versalogic\versacontrol\Server\bin\Debug\net6.0\System.IO.Packaging.dll
 D:\versalogic\versacontrol\Server\obj\Debug\net6.0\VersaControl.Server.MvcApplicationPartsAssemblyInfo.cs
 D:\versalogic\versacontrol\Server\bin\Debug\net6.0\Microsoft.AspNetCore.HeaderPropagation.dll
 D:\versalogic\versacontrol\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\versalogic\versacontrol\Server\bin\Debug\net6.0\Xceed.Document.NET.dll
+D:\versalogic\versacontrol\Server\bin\Debug\net6.0\Xceed.Words.NET.dll
+D:\versalogic\versacontrol\Server\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\versalogic\versacontrol\Server\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\versalogic\versacontrol\Server\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\versalogic\versacontrol\Server\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\versalogic\versacontrol\Server\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

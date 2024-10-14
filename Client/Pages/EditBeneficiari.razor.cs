@@ -42,6 +42,35 @@ namespace VersaControl.Client.Pages
         protected bool errorVisible;
         protected VersaControl.Server.Models.versacontrol.Beneficiari beneficiari;
 
+        protected IEnumerable<VersaControl.Server.Models.versacontrol.Roluri> rolurisForRol;
+
+
+        protected int rolurisForRolCount;
+        protected VersaControl.Server.Models.versacontrol.Roluri rolurisForRolValue;
+        protected async Task rolurisForRolLoadData(LoadDataArgs args)
+        {
+            try
+            {
+                var result = await versacontrolService.GetRoluris(top: args.Top, skip: args.Skip, count:args.Top != null && args.Skip != null, filter: $"contains(Nume, '{(!string.IsNullOrEmpty(args.Filter) ? args.Filter : "")}')", orderby: $"{args.OrderBy}");
+                rolurisForRol = result.Value.AsODataEnumerable();
+                rolurisForRolCount = result.Count;
+
+                if (!object.Equals(beneficiari.Rol, null))
+                {
+                    var valueResult = await versacontrolService.GetRoluris(filter: $"Id eq {beneficiari.Rol}");
+                    var firstItem = valueResult.Value.FirstOrDefault();
+                    if (firstItem != null)
+                    {
+                        rolurisForRolValue = firstItem;
+                    }
+                }
+
+            }
+            catch (System.Exception ex)
+            {
+                NotificationService.Notify(new NotificationMessage(){ Severity = NotificationSeverity.Error, Summary = $"Error", Detail = $"Unable to load Roluri" });
+            }
+        }
         protected async Task FormSubmit()
         {
             try

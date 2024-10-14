@@ -1,7 +1,7 @@
 {
   "entryAssembly": "VersaControl.Client",
   "resources": {
-    "hash": "sha256-Lzk/1Yd0OvXO2iUJ2fHy9bSJ395yzSpPn6k5TpXgafU=",
+    "hash": "sha256-LnBYTvi9S4+57aVeQv8iWYmcpYy4g5XjJmSOHWjDrys=",
     "runtime": {
       "dotnet.6.0.33.yaf5zcqk1k.js": "sha256-3qQapGQ76xXOm4Dpi23h4jVNXH1bTJXQIuoMVyT5rnU=",
       "dotnet.timezones.blat": "sha256-P+/t9PCEv/9QsJggxMNw2wdb6fNvy1O6Es0UqrFfIPQ=",
@@ -11,6 +11,8 @@
       "icudt_no_CJK.dat": "sha256-OxylFgLJlFqixsj+nLxYVsv5iZLvfIKMpLf9hrWaChA="
     },
     "assembly": {
+      "Xceed.Document.NET.dll": "sha256-RAUPJttURXd2Dwk1W0bLMFrR2ZVqs4FEpIY3PkA0sbs=",
+      "Xceed.Words.NET.dll": "sha256-v/WjDg0BTV07ZaFxL5+I1ApusAk9iHJ6YS7yCyj4gO4=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-YrylHRTu62Y4DS1KJjjsfHa2yNHmK2OLLMrMojWIKNo=",
       "Microsoft.AspNetCore.Components.dll": "sha256-Dsr8SANfjfd7i6Yk0fvbdQnH1zj1oYLODyZ52xINdww=",
       "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-xbEcMmsZVcvk5fX+1SeXPguS4wF3qoU0hqW3MlQa6O0=",
@@ -46,7 +48,10 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-jOmoWSfsdQexH/6QCA56gR1RMEqeix2iDDUBWbpAOQI=",
       "Microsoft.JSInterop.dll": "sha256-5Gw6JvdCXQHIlpy/MeI8ekhyIJD4ovwAiwXu+AwG6F8=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-jjvkA2MkUDycoIIikuTOZFtCe2gJtIJl1sT7Vif+dgM=",
+      "Microsoft.Win32.SystemEvents.dll": "sha256-QV6B1p/dQJO7qHvPN0JZr5UKKFp+s9zZSnViNcpgVN8=",
       "Radzen.Blazor.dll": "sha256-FHmuMg//KdhGx9JCIEVh1XnvGJpPxb6xCXkuVgjTZy8=",
+      "System.Drawing.Common.dll": "sha256-dwtIoWQRFC7p1tlAJ7t97eQP9V3zyrjSdzHn0aaC4HM=",
+      "System.IO.Packaging.dll": "sha256-1NYPxd/Znog+W3dejVSmi57hLM8eGX/c6SIZBh/dDRM=",
       "System.IO.Pipelines.dll": "sha256-OXr1SqT/FRQmnxVa6n811yUyJraU4tzQs5skNCiDmiM=",
       "System.Linq.Dynamic.Core.dll": "sha256-/jklD97III8WsOIQ2E/25pmLybpR56i9aE8Ft/puRr4=",
       "Microsoft.CSharp.dll": "sha256-TwgBqzWQLWA9KvkOjwv9MjvcCJbBoxTAqrx5dQ51s74=",
@@ -215,10 +220,10 @@
       "mscorlib.dll": "sha256-B9j0sYk80myYI4rWEvcGR3X307RSTBIwNZyYmqssN/g=",
       "netstandard.dll": "sha256-OA2B0VuineNCslrp0x3+8GHIKIgroIXq3QAppg304/0=",
       "System.Private.CoreLib.dll": "sha256-5B68cmtop3I9GS2JqJJBZQG3XP0L8yLNq+EREukp2Zk=",
-      "VersaControl.Client.dll": "sha256-HZ1KruYo6nCwgkGUbk5rsf2DF6hXyH1XM0lRkTTVwIA="
+      "VersaControl.Client.dll": "sha256-UTHbZD08cLqXKAptOtYXWrrl3303zcjX8488lV6W5uU="
     },
     "pdb": {
-      "VersaControl.Client.pdb": "sha256-2jsFCZshriv4Mrnnudh+KKMPG5FZ5w/JtP4MSiuX1MU="
+      "VersaControl.Client.pdb": "sha256-zyUZ6Sve4qAwYj5EIc5XKdDh7SEEBkCfUmGyh8pgJso="
     },
     "runtimeAssets": {
       "dotnet.wasm": {

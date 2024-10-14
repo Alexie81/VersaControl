@@ -37,18 +37,28 @@
     </RadzenBody>
     <RadzenSidebar Expanded="@sidebarExpanded" style="z-index: 2">
         <RadzenStack AlignItems="Radzen.AlignItems.Center" class="rz-py-4 rz-py-lg-6" Style="padding: var(--rz-panel-menu-item-padding); border-bottom: var(--rz-panel-menu-item-border);">
-            <RadzenImage Path="images/logo.png"  style="width: 48px; height: 48px;" AlternateText="Application logo"></RadzenImage>
-            <RadzenText Text="VersaControl" TextStyle="Radzen.Blazor.TextStyle.Subtitle1" class="rz-mb-0" style="color: var(--rz-sidebar-color);" />
+            <RadzenImage Path="images/logo.png"  style="width: 128px; height: 131px" AlternateText="Application logo"></RadzenImage>
+            <RadzenText Text="VersaControl v1.0.0" TextStyle="Radzen.Blazor.TextStyle.Overline" TagName="Radzen.Blazor.TagName.P" TextAlign="Radzen.TextAlign.Center" />
         </RadzenStack>
         <RadzenPanelMenu>
             <RadzenPanelMenuItem Text="Home" Path="" />
-            <RadzenPanelMenuItem Text="Contractori" Path="contractori" />
+            <RadzenPanelMenuItem Text="Contracte" Path="contracte" />
+            <RadzenPanelMenuItem Text="Anexa" Path="anexa" />
             <RadzenPanelMenuItem Text="Beneficiari" Path="beneficiari" />
-            <RadzenPanelMenuItem Text="Contract Nou" Path="contract--nou" />
+            
+            <RadzenPanelMenuItem Text="Contractori" Path="contractori" />
+            <RadzenPanelMenuItem Text="Monede" Path="monede" />
+            <RadzenPanelMenuItem Text="Roluri" Path="roluri" />
+            <RadzenPanelMenuItem Text="Tipuri Contract" Path="tipuri-contract" />
+            <RadzenPanelMenuItem Text="Download" Path="download" />
+            <RadzenPanelMenuItem Text="AdminSettings" Path="admin-settings" />
+            
+            
+            
+            
+            
         </RadzenPanelMenu>
         <RadzenStack AlignItems="Radzen.AlignItems.Center" Gap="0" class="rz-py-4 rz-py-lg-6" Style="padding: var(--rz-panel-menu-item-padding);">
-            <RadzenText Text="VersaControl v1.0.0" TextStyle="Radzen.Blazor.TextStyle.Caption" TagName="Radzen.Blazor.TagName.P" TextAlign="Radzen.TextAlign.Center" />
-            <RadzenText Text="Copyright Ⓒ 2024" TextStyle="Radzen.Blazor.TextStyle.Caption" class="rz-mb-0" TagName="Radzen.Blazor.TagName.P" TextAlign="Radzen.TextAlign.Center" />
         </RadzenStack>
     </RadzenSidebar>
 </RadzenLayout>

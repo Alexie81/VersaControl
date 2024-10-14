@@ -17,3 +17,32 @@
     Layout = "_Layout";
 }
 <component type="typeof(VersaControl.Client.App)" render-mode="WebAssemblyPrerendered" />
+
+<script>
+    async function saveFileFromBlazor(content, fileName) {
+        try {
+            // Afișează un dialog pentru a selecta locația de salvare
+            const fileHandle = await window.showSaveFilePicker({
+                suggestedName: fileName,
+                types: [
+                    {
+                        description: 'Text Files',
+                        accept: { 'text/plain': ['.txt'] },
+                    },
+                ],
+            });
+
+            // Creează un stream pentru a scrie în fișier
+            const writableStream = await fileHandle.createWritable();
+
+            // Scrie conținutul primit de la Blazor în fișier
+            const blob = new Blob([content], { type: 'text/plain' });
+            await writableStream.write(blob);
+
+            // Închide stream-ul după ce scrierea este completă
+            await writableStream.close();
+        } catch (err) {
+            console.error('Eroare la salvarea fișierului:', err.name, err.message);
+        }
+    }
+</script>
